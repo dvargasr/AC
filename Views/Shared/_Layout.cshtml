@@ -1,0 +1,48 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Roboto&display=swap" rel="stylesheet">
+    <link href="~/css/site.css" rel="stylesheet" />
+
+    <script src="https://kit.fontawesome.com/dcc9c50295.js" crossorigin="anonymous"></script>
+    <title>Adopciones Chinita</title>
+</head>
+<body>
+    <header class="" style="width:100%;">
+        <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+            <h1 class="navbar-brand" style="font-family: 'Indie Flower', cursive;"><i class="fa fa-paw"></i> Welcome to Adopciones Chinita <i class="fa fa-paw"></i></h1>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#theMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="theMenu" class="navbar-collapse collapse">
+                <ul class="navbar-nav" style="width:100%;">
+                    <li class="nav-item"><a class="nav-link" asp-controller="App" asp-action="Index">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" asp-controller="Dog" asp-action="Dogs">Dogs</a></li>
+                    <partial name="_LoginPartial" />
+                </ul>
+                <ul class="navbar-nav navbar-right">
+                    <li class="nav-item"><a class="nav-link" asp-controller="App" asp-action="SetLanguage" asp-route-language="en" asp-route-returnUrl="@Context.Request.Path">EN</a></li>
+                    <li class="nav-item"><a class="nav-link" asp-controller="App" asp-action="SetLanguage" asp-route-language="es" asp-route-returnUrl="@Context.Request.Path">ES</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="page-content">@RenderBody()</section>
+    <footer class="page-footer bg-dark text-white">
+        <div class="text-center"><a href="https://www.facebook.com/Adopciones-Chinita-806204252736011/"><i class="fab fa-facebook"></i></a> Copyright 2020</div>
+    </footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    @RenderSection("Scripts", false)
+</body>
+</html>

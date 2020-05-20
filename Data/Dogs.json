@@ -1,0 +1,17 @@
+[
+	{
+		"Id": 0,
+		"Name": "Archie",
+		"Picture": "Archie",
+		"Description": "Archie used to spend his days on a leash wanting to be free so I asked his owners if I could have him and fortunately, they said yes. He was spayed, has all the vaccines and blood works done and soon will be with his new Canadian family.",
+		"Adopted": false
+	},
+
+	{
+		"Id": 0,
+		"Name": "Coffee",
+		"Picture": "Coffee",
+		"Description": "Coffee was abandoned when he was a puppy of only 6 months. He was rescued and he is now spayed, vaccinated and ready to be adopted.",
+		"Adopted": false
+	}
+]

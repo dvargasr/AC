@@ -1,0 +1,6 @@
+//041220784192473 47693826
+{
+	"ConnectionStrings": {
+		"CConnectionString": "server=(localdb)\\MSSQLLocalDB;Database=Chinita;Integrated Security=true;MultipleActiveResultSets=true"
+	}
+}

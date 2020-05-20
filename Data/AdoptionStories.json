@@ -1,0 +1,14 @@
+[
+	{
+		"Id": 0,
+		"Dog": {
+			"Id": 0,
+			"Name": "Dulce",
+			"Picture": "Dulce",
+			"Description": "Dulce used to wander around the town eating from the trash cans. A few days after arriving to the shelter she gave birth to 12 puppies who were given in adoption. She will be part of the 2020 Adopciones Chinita calendar and will soon become the new member of a Canadian family.",
+			"Adopted": true
+		},
+		"Date": "2019-10-01T00:00:00",
+		"Location": "Canada"
+	}
+]

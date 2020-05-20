@@ -1,0 +1,41 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Chinita.Data.Entities
+
+@{string AdministratorsConstant = "Administrators";}
+
+@inject SignInManager<StoreUser> SignInManager
+@inject UserManager<StoreUser> UserManager
+
+<ul class="navbar-nav" condition="SignInManager.IsSignedIn(User) && User.IsInRole(@AdministratorsConstant)">
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Admin
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" asp-controller="Admin" asp-action="UserManagement">Manage Users</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" asp-controller="DogAdmin" asp-action="DogManagement">Manage Dogs</a>
+        </div>
+        <!--<a id="manage" class="nav-link" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @UserManager.GetUserName(User)!</a>-->
+    </li>
+    <li class="nav-item">
+        <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "App", new { area = "" })">
+            <button id="logout" type="submit" class="nav-link btn btn-link">Logout</button>
+        </form>
+    </li>
+</ul>
+<ul class="navbar-nav" condition="SignInManager.IsSignedIn(User) && !User.IsInRole(@AdministratorsConstant)">
+    <li class="nav-item">
+        <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "App", new { area = "" })">
+            <button id="logout" type="submit" class="nav-link btn btn-link">Logout</button>
+        </form>
+    </li>
+</ul>
+<ul class="navbar-nav" Condition="!SignInManager.IsSignedIn(User)">
+    <li class="nav-item">
+        <a class="nav-link" id="register" asp-area="Identity" asp-page="/Account/Register">Register</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="login" asp-area="Identity" asp-page="/Account/Login">Login</a>
+    </li>
+</ul>

@@ -1,0 +1,25 @@
+﻿@model IEnumerable<StoreUser>
+
+    <div class="admin-table">
+        <h2>User management</h2>
+
+        <table class="table table-condensed table-bordered">
+            <thead class="thead-light">
+                <tr>
+                    <th>User ID</th>
+                    <th>User name</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var u in Model)
+                {
+                    <tr>
+                        <td>@u.Id</td>
+                        <td>@u.UserName</td>
+                        <td><a class="btn btn-sm btn-primary" asp-action="EditUser" asp-route-id="@u.Id">Edit</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>

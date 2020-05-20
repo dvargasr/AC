@@ -1,0 +1,14 @@
+﻿@model IEnumerable<DogModel>
+
+<div class="dog-grid">
+    @foreach (var d in Model)
+    {
+        <div class="card mx-2">
+            <div class="card-body">
+                <h3 class="mx-2">@d.Name</h3>
+                <img src="~/img/@(d.Picture).jpg" class="dog-image img-fluid border border-dark" />
+                <p>@d.Description</p>
+            </div>
+        </div>
+    }
+</div>

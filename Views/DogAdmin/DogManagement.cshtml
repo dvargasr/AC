@@ -1,0 +1,33 @@
+﻿@model IEnumerable<DogModel>
+
+    <div class="admin-table">
+        <h2>Dog management</h2>
+
+        <table class="table table-condensed table-bordered">
+            <thead class="thead-light">
+                <tr>
+                    <th>Dog name</th>
+                    <th>Dog description</th>
+                    <th>Adopted</th>
+                    <th>Dog image</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var d in Model)
+                {
+                <tr>
+                    <td>@d.Name</td>
+                    <td>@d.Description</td>
+                    <td><input type="checkbox" asp-for="@d.Adopted" /></td>
+                    <td><img src="~/img/@(d.Picture).jpg" class="img-thumbnail" /></td>
+                    <td>
+                        <form>
+                            <a class="btn btn-sm btn-primary" asp-action="EditDog" asp-route-dogId="@d.DogId">Edit</a>
+                        </form>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>

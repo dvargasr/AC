@@ -1,0 +1,13 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+
+@inject IViewLocalizer  Localizer
+
+<div class="logo-content-grid">
+    <div class="logo">
+        <img class="img-fluid index-img img-circle" src="~/img/logo.jpg" />
+    </div>
+    <div class="content">
+        <h1 class="text-danger text-center index-title">@Localizer["IndexTitle"]</h1>
+        <p class="index-description">@Localizer["IndexContent"]</p>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+﻿@model DogModel
+
+<div class="logo-content-grid">
+    <div class="logo">
+        <img class="img-fluid index-img img-circle" src="~/img/logo.jpg" />
+    </div>
+    <div class="content">
+        <h3>Edit dog</h3>
+        <form asp-controller="DogAdmin" asp-action="EditDog" method="post" class="form-horizontal" role="form">
+            <hr />
+            <div asp-validation-summary="All" class="text-danger"></div>
+
+            <div style="display:none" class="form-group">
+                <label asp-for="DogId"></label>
+                <input asp-for="DogId" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Name"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Description"></label>
+                <textarea asp-for="Description" class="form-control"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Picture"></label>
+                <input asp-for="Picture" class="form-control" />
+                <span asp-validation-for="Picture" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <div class="checkbox">
+                    <label asp-for="Adopted">
+                        <input asp-for="Adopted" />
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" value="Edit dog" />
+            </div>
+
+        </form>
+    </div>
+</div>
